@@ -1,4 +1,13 @@
 <?php
+// require_once '../user/functions.php';
+// session_start();
+// // echo $_SESSION['role'];
+// if (!isset( $_SESSION['role'])) {  
+//     echo " <script>
+//         alert('Anda tidak mempunyai akses');
+//         document.location.href='../user/login.php'; </script>";
+//     exit;
+// }
 require 'functions.php';
 //ketika tombol tambah diklik
 if(isset($_POST["tambah"])) {
@@ -18,7 +27,7 @@ if(isset($_POST["tambah"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="style.css">
     <title>Admin Panel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
@@ -33,14 +42,6 @@ if(isset($_POST["tambah"])) {
         </ul>
     </div>
     <div class="container">
-        <div class="header">
-            <div class="nav">
-                <div class="search">
-                    <input type="text" placeholder="Search..">
-                    <button type="submit"><img src="../img/magnifying-glass-solid.svg" alt=""></button>
-                </div>
-            </div>
-        </div>
         <div class="content">
             <div class="content-2">
                 <div class="daftar-pasien" style="margin-top:2rem;">

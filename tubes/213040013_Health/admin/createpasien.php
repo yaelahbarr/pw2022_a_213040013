@@ -1,15 +1,24 @@
 <?php
-require 'functions.php';
-//ketika tombol tambah diklik
-if(isset($_POST["tambah"])) {
-    // jalankan fungsi tambah()
-    if(tambahpasien($_POST) > 0) {
-        echo "<script>
-        alert('data berhasil ditambahkan');
-        document.location.href = 'pasien.php'
-        </script>";
+    // require_once '../user/functions.php';
+    // session_start();
+    // // echo $_SESSION['role'];
+    // if (!isset( $_SESSION['role'])) {  
+    //     echo " <script>
+    //         alert('Anda tidak mempunyai akses');
+    //         document.location.href='../user/login.php'; </script>";
+    //     exit;
+    // }
+    require 'functions.php';
+    //ketika tombol tambah diklik
+    if(isset($_POST["tambah"])) {
+        // jalankan fungsi tambah()
+        if(tambahpasien($_POST) > 0) {
+            echo "<script>
+            alert('data berhasil ditambahkan');
+            document.location.href = 'pasien.php'
+            </script>";
+        }
     }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +27,7 @@ if(isset($_POST["tambah"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="style.css">
     <title>Admin Panel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
@@ -33,21 +42,13 @@ if(isset($_POST["tambah"])) {
         </ul>
     </div>
     <div class="container">
-        <div class="header">
-            <div class="nav">
-                <div class="search">
-                    <input type="text" placeholder="Search..">
-                    <button type="submit"><img src="../img/magnifying-glass-solid.svg" alt=""></button>
-                </div>
-            </div>
-        </div>
         <div class="content">
             <div class="content-2">
                 <div class="daftar-pasien" style="margin-top:2rem;">
                     <div class="title">
                         <h2>Tambah Data Pasien</h2>
                     </div>
-                    <form action="" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
                         <div class="mb-3 row mt-5">
                             <label for="nama" class="col-sm-2 col-form-label"> Nama Pasien</label>
                             <div class="col-sm-10">
@@ -68,8 +69,9 @@ if(isset($_POST["tambah"])) {
                         </div>
                         <div class="mb-3 row mt-5">
                             <label for="gambar" class="col-sm-2 col-form-label"> Gambar</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="gambar" required name="gambar">
+                            <img src="" class="img-thumbnail col-sm-2 col-form label" height="50px" style="display: none;" id="img-preview">
+                            <div class="col-sm-8">
+                                <input type="file" class="form-control" id="gambar" name="gambar" onchange="previewImage()">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm"  name="tambah">Submit</button>
@@ -81,3 +83,16 @@ if(isset($_POST["tambah"])) {
 </body>
 
 </html>
+<script>
+        function previewImage(){
+            const gambar=document.querySelector('#gambar');
+            const imgPreview = document.querySelector('#img-preview');
+            imgPreview.style.display = 'block';
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(gambar.files[0]);
+
+            oFReader.onload = function (oFREvent){
+                imgPreview.src = oFREvent.target.result;
+            };
+        }
+    </script>
