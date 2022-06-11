@@ -60,7 +60,7 @@
                 <div class="daftar-pasien" style="margin-top:2rem;">
                     <div class="title">
                         <h2>Sertifikat</h2>
-                        <!-- <a href="report.php" class="btn">Report</a> -->
+                        <a href="report.php" class="btn">Unduh File</a>
                     </div>
                     <table>
                         <tr>

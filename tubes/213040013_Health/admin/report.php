@@ -17,10 +17,8 @@
         <th>Keterangan</th>
         <th>Tanggal Vaksin</th>
     </tr>';
-    $no = 1;
     foreach ($query as $row) :
     $html .= "<tr>
-    <td>".$no."</td>
         <td>".$row['no_tiket']."</td>
         <td>".$row['nama_vaksin']."</td>
         <td>".$row['nama_tenmed']."</td>
@@ -35,10 +33,10 @@
     $html .= "</html>";
     $tes = $dompdf->loadHtml($html);
     // var_dump($tes);
-    // // Setting ukuran dan orientasi kertas
-    // $dompdf->setPaper('A4', 'potrait');
-    // // Rendering dari HTML Ke PDF
-    // $dompdf->render();
-    // // Melakukan output file Pdf
-    // $dompdf->stream('data_vaksin.pdf');
+    // Setting ukuran dan orientasi kertas
+    $dompdf->setPaper('A4', 'potrait');
+    // Rendering dari HTML Ke PDF
+    $dompdf->render();
+    // Melakukan output file Pdf
+    $dompdf->stream('data_vaksin.pdf');
 ?>

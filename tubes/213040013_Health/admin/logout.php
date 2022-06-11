@@ -7,6 +7,6 @@
     setcookie('id_user', '', time() - 3600);
     setcookie('key', '', time() - 3600);
 
-    header("Location: ../user/login.php");
+    header("Location: ../user/index.php");
     exit;
 ?>

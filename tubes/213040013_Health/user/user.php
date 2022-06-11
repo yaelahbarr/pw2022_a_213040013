@@ -64,10 +64,9 @@
     <div id="about">
       <div class="container-fluid">
         <div class="container-lg">
-          <h1 style="color: lightseagreen">Apa itu Sombrilla Corporation?</h1>
+          <h1 style="color: lightseagreen">TERIMA KASIH SUDAH BERPARTISIPASI DALAM VAKSINASI</h1>
           <p>
-            Sombrilla Corporation adalah layanan masyarakat yang dikembangkan
-            untuk membantu dalam menghentikan penyebaran virus Covid-19 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi nostrum placeat beatae quos nam earum laboriosam repellendus et culpa omnis molestias sed, architecto odit optio a, unde quas reiciendis distinctio.
+            Selamat anda telah terdaftar vaksinasi! Ayo ajak keluarga, saudara, pasangan, dan teman anda untuk segera mendaftarkan diri untuk vaksinasi. Jangan lupa untuk tetap patuhi protokol kesehatan dan rajin mencuci tangan! Lindungi diri dan sekitar dengan berpartisipasi dalam program Vaksinasi COVID-19, Mari berpartisipasi melindungi sesama. 
           </p>
         </div>
       </div>
