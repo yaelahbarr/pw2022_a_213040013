@@ -163,6 +163,15 @@ function ubahtenmed($data) {
               return mysqli_affected_rows($conn);
 }
 
+function hapustenmed($id_tenmed) {
+    $conn = koneksi();
+    $tenmed = query ("SELECT * FROM tenaga_medis WHERE id_tenmed = $id_tenmed")[0];
+
+    mysqli_query($conn, "DELETE FROM tenaga_medis WHERE id_tenmed = $id_tenmed") or die(mysqli_error($conn));
+
+    return mysqli_affected_rows($conn);
+}
+
 function caripasien($find) {
     $query = "SELECT * FROM pasien
                 WHERE
